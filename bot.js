@@ -1,5 +1,5 @@
 // Require the necessary discord.js classes
-const { Client, GatewayIntentBits } = require("discord.js");
+const { Client, GatewayIntentBits, MessagePayload } = require("discord.js");
 require("dotenv").config();
 
 // Create a new client instance
@@ -23,10 +23,16 @@ const MASTERLIST = [
 	"un",
 ];
 
+
 client.on("messageCreate", message => {
 	for (const word of MASTERLIST) {
 		if (message.content.endsWith(word)) {
-			message.reply("deux");
+			message.reply(MessagePayload.create(message, {
+				reply : { messageReference : message },
+				files : ["videos/video.mp4"],
+				content : "deux :v:" },
+			));
+			console.log(`trolled ${message.author.tag}`);
 			return;
 		}
 	}
