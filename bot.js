@@ -26,7 +26,7 @@ const MASTERLIST = [
 
 client.on("messageCreate", message => {
 	for (const word of MASTERLIST) {
-		if (message.content.endsWith(word)) {
+		if (message.content.toLowerCase().endsWith(word)) {
 			message.reply(MessagePayload.create(message, {
 				reply : { messageReference : message },
 				files : ["videos/video.mp4"],
