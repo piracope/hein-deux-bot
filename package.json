@@ -1,0 +1,22 @@
+{
+  "name": "hein-deux-bot",
+  "version": "1.0.0",
+  "description": "A simple bot that replies with \"deux\" when someone says \"hein\". You know because hein -> deux, 1-2 haha funny",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piracope/hein-deux-bot.git"
+  },
+  "author": "piracope",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/piracope/hein-deux-bot/issues"
+  },
+  "homepage": "https://github.com/piracope/hein-deux-bot#readme",
+  "dependencies": {
+    "discord.js": "^14.3.0"
+  }
+}
