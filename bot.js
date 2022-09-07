@@ -1,6 +1,6 @@
 // Require the necessary discord.js classes
-const { Client, GatewayIntentBits } = require('discord.js');
-require('dotenv').config();
+const { Client, GatewayIntentBits } = require("discord.js");
+require("dotenv").config();
 
 // Create a new client instance
 const client = new Client({
@@ -12,12 +12,24 @@ const client = new Client({
 });
 
 // When the client is ready, run this code (only once)
-client.once('ready', () => {
-	console.log('Ready!');
+client.once("ready", () => {
+	console.log("Ready!");
 });
 
-client.on('messageCreate', message => {
-	console.log(`${message.author.tag} a envoyé "${message.content}" dans le channel ${message.channel.name}`);
+const MASTERLIST = [
+	"hein",
+	"hein ?",
+	"hein?",
+	"un",
+];
+
+client.on("messageCreate", message => {
+	for (const word of MASTERLIST) {
+		if (message.content.endsWith(word)) {
+			message.reply("deux");
+			return;
+		}
+	}
 });
 
 // Login to Discord with your client's token
